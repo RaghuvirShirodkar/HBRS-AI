@@ -1,0 +1,272 @@
+********* Details on executing the script *********
+***************************************************
+The script is run using the following cmdline command:
+    python connect_four.py 
+
+The source directory needs to be setup as follows:
+    /src - following three files
+        connect_four.py
+        player_types.py
+        puzzle.py
+
+As the main code 'connect_four.py' needs classes and functions from the other two codes, not following this heirarchy would lead to breaking the code.
+
+*************** Reading the output ****************
+***************************************************
+This is an interactive game, wherein the player is first asked to choose the type of opponent, namely, MiniMax player and AlphaBetaPruning player. The depth of either player is set to 5, and human player is defaulted to start the game.
+
+The game is won by the agent who successfully manages four in a row, either vertically, horizontally or diagonally.
+Following is a snapshot from the game:
+
+Welcome to Connect Four!!
+Choose your opponent (1 or 2):
+1. MiniMax Player	2. AlphaBetaPruning Player: 1
+Make your move!
+Enter col value between 1 and 7: 1
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 1	Total moves: 1
+
+Move made by AI: COLUMN 2
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 2	Total moves: 2
+
+Make your move!
+Enter col value between 1 and 7: 3
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 3	Total moves: 3
+
+Move made by AI: COLUMN 2
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   | X |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 2	Total moves: 4
+
+Make your move!
+Enter col value between 1 and 7: 2
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   | O |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   | X |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 2	Total moves: 5
+
+Move made by AI: COLUMN 1
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   | O |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 1	Total moves: 6
+
+Make your move!
+Enter col value between 1 and 7: 1
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 1	Total moves: 7
+
+Move made by AI: COLUMN 3
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X | X |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 3	Total moves: 8
+
+Make your move!
+Enter col value between 1 and 7: 3
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X | X |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 3	Total moves: 9
+
+Move made by AI: COLUMN 4
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X | X |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O | X |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 4	Total moves: 10
+
+Make your move!
+Enter col value between 1 and 7: 4
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X | X | O |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O | X |   |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 4	Total moves: 11
+
+Move made by AI: COLUMN 5
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O | O |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X | X | O |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O | X | X |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 5	Total moves: 12
+
+Make your move!
+Enter col value between 1 and 7: 4
+
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+|   |   |   |   |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | O | O | O |   |   |   |
+ --- --- --- --- --- --- --- 
+| X | X | X | O |   |   |   |
+ --- --- --- --- --- --- --- 
+| O | X | O | X | X |   |   |
+ --- --- --- --- --- --- --- 
+  1   2   3   4   5   6   7
+Last move: COLUMN 4	Total moves: 13
+
+Player 1 wins!
+
+********************* Remarks *********************
+***************************************************
+The program works correctly for MiniMax player.
+However, the AlphaBetaPruning player does not play as per our expectation. It follows a random behaviour and is unable to maintain the flow of the game.
+
+We have commented the code wherever necessary to provide an insight on the logic implemented in this program.
