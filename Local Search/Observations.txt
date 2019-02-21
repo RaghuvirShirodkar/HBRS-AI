@@ -1,0 +1,151 @@
+********* Details on executing the script *********
+***************************************************
+The script is run using the following cmdline command:
+    python travelling_sales_person.py > ../out/travelling_sales_person_solution.txt
+
+The source directory needs to be setup as follows:
+    /data - contains the cities text files.
+    /out - used for outputting the results.        
+    /src - source code
+
+As the source code needs the cities file for execution, in case this structure is not followed, the code will break.
+
+*************** Reading the output ****************
+***************************************************
+   The output is visualised to provide data as shown below. This printing method is used for all three algorithms, with the hill climbing algorithms having a "best route" and "cost of best route", along with "time required" at the foot note.
+
+#######################################################################################################################
+############################################## HILL CLIMBING - SIMPLE #################################################
+#######################################################################################################################
+Initial (randomly generated) city tour #1 :  Delhi ->  Buenos Aires ->  Shanghai ->  Karachi ->  Bombay
+Cost of initial tour: 454.41896010077863
+
+New tour generated: Bombay ->  Buenos Aires ->  Shanghai ->  Karachi ->  Delhi
+Cost of new tour: 443.27275594012485
+
+New tour generated: Buenos Aires ->  Bombay ->  Shanghai ->  Karachi ->  Delhi
+Cost of new tour: 301.9329426989976
+
+New tour generated: Buenos Aires ->  Shanghai ->  Bombay ->  Karachi ->  Delhi
+Cost of new tour: 305.1895048950249
+
+New tour generated: Buenos Aires ->  Bombay ->  Karachi ->  Shanghai ->  Delhi
+Cost of new tour: 293.4855809686888
+
+New tour generated: Buenos Aires ->  Bombay ->  Karachi ->  Delhi ->  Shanghai
+Cost of new tour: 205.20868151076826
+
+Current iteration best tour possible: Buenos Aires ->  Bombay ->  Karachi ->  Delhi ->  Shanghai
+Cost of current iteration best possible tour: 205.20868151076826
+
+#######################################################################################################################
+
+Initial (randomly generated) city tour #2 :  Bombay ->  Karachi ->  Shanghai ->  Buenos Aires ->  Delhi
+Cost of initial tour: 448.5794803896597
+
+New tour generated: Delhi ->  Karachi ->  Shanghai ->  Buenos Aires ->  Bombay
+Cost of new tour: 449.1122356512438
+
+New tour generated: Karachi ->  Bombay ->  Shanghai ->  Buenos Aires ->  Delhi
+Cost of new tour: 443.92166051880383
+
+New tour generated: Karachi ->  Shanghai ->  Bombay ->  Buenos Aires ->  Delhi
+Cost of new tour: 440.6650983227765
+
+New tour generated: Karachi ->  Shanghai ->  Buenos Aires ->  Bombay ->  Delhi
+Cost of new tour: 443.04068410474247
+
+New tour generated: Karachi ->  Shanghai ->  Bombay ->  Delhi ->  Buenos Aires
+Cost of new tour: 456.7947702845861
+
+Current iteration best tour possible: Karachi ->  Shanghai ->  Bombay ->  Buenos Aires ->  Delhi
+Cost of current iteration best possible tour: 440.6650983227765
+
+#######################################################################################################################
+
+Initial (randomly generated) city tour #3 :  Bombay ->  Shanghai ->  Karachi ->  Delhi ->  Buenos Aires
+Cost of initial tour: 457.0268421199685
+
+New tour generated: Buenos Aires ->  Shanghai ->  Karachi ->  Delhi ->  Bombay
+Cost of new tour: 318.06261466080724
+
+New tour generated: Shanghai ->  Buenos Aires ->  Karachi ->  Delhi ->  Bombay
+Cost of new tour: 402.0003053989729
+
+New tour generated: Buenos Aires ->  Karachi ->  Shanghai ->  Delhi ->  Bombay
+Cost of new tour: 298.76393847568426
+
+New tour generated: Buenos Aires ->  Karachi ->  Delhi ->  Shanghai ->  Bombay
+Cost of new tour: 294.3381904402108
+
+New tour generated: Buenos Aires ->  Karachi ->  Delhi ->  Bombay ->  Shanghai
+Cost of new tour: 210.48703901776366
+
+Current iteration best tour possible: Buenos Aires ->  Karachi ->  Delhi ->  Bombay ->  Shanghai
+Cost of current iteration best possible tour: 210.48703901776366
+
+#######################################################################################################################
+
+Initial (randomly generated) city tour #4 :  Bombay ->  Buenos Aires ->  Shanghai ->  Delhi ->  Karachi
+Cost of initial tour: 443.27275594012485
+
+New tour generated: Karachi ->  Buenos Aires ->  Shanghai ->  Delhi ->  Bombay
+Cost of new tour: 435.4459318459556
+
+New tour generated: Buenos Aires ->  Karachi ->  Shanghai ->  Delhi ->  Bombay
+Cost of new tour: 298.76393847568426
+
+New tour generated: Buenos Aires ->  Shanghai ->  Karachi ->  Delhi ->  Bombay
+Cost of new tour: 318.06261466080724
+
+New tour generated: Buenos Aires ->  Karachi ->  Delhi ->  Shanghai ->  Bombay
+Cost of new tour: 294.3381904402108
+
+New tour generated: Buenos Aires ->  Karachi ->  Delhi ->  Bombay ->  Shanghai
+Cost of new tour: 210.48703901776366
+
+Current iteration best tour possible: Buenos Aires ->  Karachi ->  Delhi ->  Bombay ->  Shanghai
+Cost of current iteration best possible tour: 210.48703901776366
+
+#######################################################################################################################
+
+Initial (randomly generated) city tour #5 :  Shanghai ->  Karachi ->  Bombay ->  Buenos Aires ->  Delhi
+Cost of initial tour: 398.772110145485
+
+New tour generated: Delhi ->  Karachi ->  Bombay ->  Buenos Aires ->  Shanghai
+Cost of new tour: 352.3879744630144
+
+New tour generated: Karachi ->  Delhi ->  Bombay ->  Buenos Aires ->  Shanghai
+Cost of new tour: 354.76378464682193
+
+New tour generated: Delhi ->  Bombay ->  Karachi ->  Buenos Aires ->  Shanghai
+Cost of new tour: 349.21897023970104
+
+New tour generated: Delhi ->  Bombay ->  Buenos Aires ->  Karachi ->  Shanghai
+Cost of new tour: 345.9624080436737
+
+New tour generated: Delhi ->  Bombay ->  Buenos Aires ->  Shanghai ->  Karachi
+Cost of new tour: 453.5379836867172
+
+Current iteration best tour possible: Delhi ->  Bombay ->  Buenos Aires ->  Karachi ->  Shanghai
+Cost of current iteration best possible tour: 345.9624080436737
+
+#######################################################################################################################
+
+Best tour possible: Buenos Aires ->  Bombay ->  Karachi ->  Delhi ->  Shanghai
+Cost of best possible tour: 205.20868151076826
+Time needed: 0.0013 seconds
+
+#######################################################################################################################
+
+********************* Remarks *********************
+***************************************************
+This program has been tested with 3 files, namely, 5_cities.txt, 49_cities.txt and cities_full.txt.
+All three files are available in the /data folder.
+
+The /out folder contains the output for TSP problem. Unfortunately, we were not able to complete the graphical visualisation through matplotlib. Instead, we have printed the output for each of the algorithms in a single file as shown above.
+
+The program works correctly for hill climbing - simple as well as hill climbing - steepest ascent variations.
+However, there seems to be some bug for simulated annealing, due to which the output seems to be incorrect some times. This could be attributed to a design flaw in the code.
+
+We have commented the code wherever necessary to provide an insight on the logic implemented in this program.
