@@ -1,0 +1,94 @@
+********* Details on executing the script *********
+***************************************************
+    The script is run using the following cmdline command:
+        python informed_search_implementation.py <mode>
+        <mode> is one of two values: 
+            manhattan - Compute the two algorithms based on manhattan distance
+            misplaced_tiles - Compute the two algorithms based on misplaced tiles distance
+    For instance, to run the script for manhattan distance, the command would be:
+        python informed_search_implementation.py manhattan
+
+*************** Reading the output ****************
+***************************************************
+   The output is visualised to provide data as follows:
+
+Solving puzzle: 
+[[1 4 2]
+ [3 7 5]
+ [6 0 8]] 
+ using Greedy Algorithm using heuristic function: MISPLACED_TILES
+
+************** Details of execution ***************
+***************************************************
+=========================================
+Number of moves required: 3
+Cost of reaching goal state: 8
+Time required: 0.000537 seconds
+Number of nodes in fringe: 8
+Number of nodes visited: 3
+Steps taken for solution:
+[[1 4 2]
+ [3 7 5]
+ [6 0 8]]
+    |
+    V
+[[1 4 2]
+ [3 0 5]
+ [6 7 8]]
+    |
+    V
+[[1 0 2]
+ [3 4 5]
+ [6 7 8]]
+    |
+    V
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+
+==================================================================================
+
+Solving puzzle: 
+[[1 4 2]
+ [3 7 5]
+ [6 0 8]] 
+ using A* algorithm using heuristic function: MISPLACED_TILES
+
+Details of execution:
+=========================================
+Number of moves required: 3
+Cost of reaching goal state: 3
+Time required: 0.009774 seconds
+Number of nodes in fringe: 26
+Number of nodes visited: 14
+Steps taken for solution:
+[[1 4 2]
+ [3 7 5]
+ [6 0 8]]
+    |
+    V
+[[1 4 2]
+ [3 0 5]
+ [6 7 8]]
+    |
+    V
+[[1 0 2]
+ [3 4 5]
+ [6 7 8]]
+    |
+    V
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+
+****************** Observations *******************
+***************************************************
+Depending on the heuristic function used, the values obtained, in terms of computation and speed, vary significantly.
+This can be seen from the data returned from the program.
+We can conclude that manhattan distance is better at attempting to reach the goal as compared to misplaced tiles distance.
+
+******************** Remarks **********************
+***************************************************
+This program has been tested with a couple of puzzles, that are present in the source code.
+While this program works for simpler cases, we could not test it for random test cases, probably because there are computational challenges, both in terms of our computers, and the program logic itself.
+We have commented the code wherever necessary to provide an insight on the logic implemented in this program.
